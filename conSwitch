@@ -1,0 +1,87 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class DesafioGrupal {
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // declarao mi objeto
+        Scanner miTeclado;
+        // inicializo objeto
+        miTeclado = new Scanner(System.in);
+
+        // declaro variables
+        String usuario;
+        String contraseña;
+        String apellido;
+        String nombre;
+        String mail;
+        String cbu;
+        double saldoInicial;
+        double saldoActual;
+        int respuesta;
+        double transferir;
+        int pagar;
+        boolean S;
+        boolean N;
+        int cuentaDestino;
+        double cantidadApagar;
+
+        // inicializo
+        apellido = "Perez";
+        nombre = "Sivia";
+        mail = "silviaperez1@gmail.com";
+        cbu = "0000029568741253698751";
+        saldoInicial = 56822.23;
+        saldoActual = 0;
+        S = true;
+        N = false;
+        respuesta = 1;
+        transferir = 1;
+        pagar = 1;
+        cuentaDestino = 1;
+        cantidadApagar = 1;
+
+        System.out.println("ingrese su nombre de usuario");
+        usuario = miTeclado.nextLine();
+        System.out.println("ingrese su contraseña");
+        contraseña = miTeclado.nextLine();
+
+        System.out.println("Bienvenido a su HomeBanking");
+        System.out.println("Datos del usuario");
+        System.out.println("Apellido: " + apellido);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Correo electrónico: " + mail);
+        System.out.println("nro de CBU: " + cbu);
+        System.out.println("su saldo actual es: " + saldoInicial);
+        System.out.println("Tranferencias ");
+        System.out.println("Pagos");
+        System.out.println("ingrese 1 para Transferencias, 2 para Pagos,3 para cerrar sesión: ");
+        respuesta = miTeclado.nextInt();
+        switch (respuesta) {
+            case 1:
+                System.out.println("ingrese la cuenta destino ");
+                cuentaDestino = miTeclado.nextInt();
+                System.out.println("Ingrese cantidad a transferir: ");
+                transferir = miTeclado.nextDouble();
+                saldoActual = saldoInicial - transferir;
+                System.out.println("Su tranferencia fue exitosa,su saldo actual es " + saldoActual);
+
+                break;
+            case 2:
+                System.out.println("Ingrese servicio a pagar: 1- luz, 2 gas, 3 agua: ");
+                pagar = miTeclado.nextInt();
+                System.out.println("Ingrese cantidad a pagar: ");
+                cantidadApagar = miTeclado.nextDouble();
+                saldoActual = saldoInicial - cantidadApagar;
+                System.out.println("Su pago fue relizado,su saldo actual es " + saldoActual);
+
+                break;
+
+        }
+        System.out.println("Gracias por utilizar nuestros servicios");
+
+    }
+
+}
